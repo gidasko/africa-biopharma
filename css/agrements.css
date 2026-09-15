@@ -1,0 +1,79 @@
+/* ==========================================================================
+   AFRICA BIOPHARMA — agrements.css
+   Section #agrements : grille de cartes badges officiels
+   ========================================================================== */
+
+.agrements {
+  background-color: var(--color-white);
+}
+
+.agrements-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+}
+
+.agrement-card {
+  padding: var(--space-md);
+  text-align: left;
+}
+
+.agrement-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-primary-green-light);
+  color: var(--color-primary-green-dark);
+  margin-bottom: var(--space-sm);
+}
+
+.agrement-card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.agrement-card h4 {
+  font-size: var(--fs-base);
+  margin-bottom: 0.4rem;
+}
+
+.agrement-card__ref {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-text-dark);
+  margin-bottom: 0.15rem;
+}
+
+.agrement-card--highlight {
+  background-color: var(--color-primary-green-dark);
+  color: var(--color-white);
+}
+
+.agrement-card--highlight .agrement-card__icon {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-accent-gold);
+}
+
+.agrement-card--highlight h4,
+.agrement-card--highlight .agrement-card__ref {
+  color: var(--color-white);
+}
+
+.agrement-card--highlight .text-muted {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 980px) {
+  .agrements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .agrements-grid {
+    grid-template-columns: 1fr;
+  }
+}

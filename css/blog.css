@@ -1,0 +1,72 @@
+/* ==========================================================================
+   AFRICA BIOPHARMA — blog.css
+   Section #blog : grille de cartes articles
+   ========================================================================== */
+
+.blog {
+  background-color: var(--color-white);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.blog-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card__image {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.blog-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--ease-standard);
+}
+
+.blog-card:hover .blog-card__image img {
+  transform: scale(1.05);
+}
+
+.blog-card__body {
+  padding: var(--space-md);
+}
+
+.blog-card__date {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-primary-green-dark);
+  margin-bottom: 0.4rem;
+}
+
+.blog-card__body h3 {
+  font-size: var(--fs-md);
+  margin-bottom: 0.5rem;
+}
+
+.blog-card__link {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  color: var(--color-primary-green-dark);
+}
+
+.blog-card__link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}

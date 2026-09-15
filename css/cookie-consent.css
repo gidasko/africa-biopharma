@@ -1,0 +1,129 @@
+/* ==========================================================================
+   AFRICA BIOPHARMA — cookie-consent.css
+   Bandeau de gestion des cookies (accepter / refuser / personnaliser)
+   ========================================================================== */
+
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 300;
+  background-color: var(--color-white);
+  border-top: 1px solid rgba(26, 26, 26, 0.1);
+  box-shadow: 0 -8px 30px rgba(26, 26, 26, 0.12);
+  padding: var(--space-md);
+  transform: translateY(100%);
+  transition: transform 400ms var(--ease-standard);
+}
+
+.cookie-banner.is-visible {
+  transform: translateY(0);
+}
+
+.cookie-banner__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.cookie-banner__text {
+  flex: 1 1 320px;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.cookie-banner__text strong {
+  color: var(--color-text-dark);
+}
+
+.cookie-banner__text a {
+  color: var(--color-primary-green-dark);
+  text-decoration: underline;
+}
+
+.cookie-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.cookie-banner__actions .btn {
+  padding: 0.7rem 1.3rem;
+  font-size: var(--fs-sm);
+}
+
+/* ---------- Panneau de personnalisation ---------- */
+.cookie-panel {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(26, 26, 26, 0.08);
+  display: none;
+  max-width: var(--container-max);
+  margin-inline: auto;
+}
+
+.cookie-panel.is-open {
+  display: block;
+}
+
+.cookie-panel__row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding-block: 0.7rem;
+}
+
+.cookie-panel__row + .cookie-panel__row {
+  border-top: 1px solid rgba(26, 26, 26, 0.06);
+}
+
+.cookie-panel__row h5 {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.cookie-panel__row p {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  max-width: 60ch;
+}
+
+.cookie-panel__toggle {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+}
+
+.cookie-panel__toggle input {
+  width: 38px;
+  height: 20px;
+  accent-color: var(--color-primary-green);
+}
+
+.cookie-panel__save {
+  margin-top: var(--space-sm);
+}
+
+@media (max-width: 700px) {
+  .cookie-banner__inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cookie-banner__actions {
+    justify-content: stretch;
+  }
+
+  .cookie-banner__actions .btn {
+    flex: 1;
+  }
+}

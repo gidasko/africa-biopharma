@@ -1,0 +1,62 @@
+/* ==========================================================================
+   AFRICA BIOPHARMA — animations.css
+   Animations de base : fade-in, slide-in, compteur
+   ========================================================================== */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Éléments révélés au scroll : JS ajoute .is-visible via IntersectionObserver */
+.reveal {
+  opacity: 0;
+}
+
+.reveal.is-visible {
+  animation: slideUp var(--duration-standard) var(--ease-standard) forwards;
+}
+
+.reveal-left.is-visible {
+  animation: slideInLeft var(--duration-standard) var(--ease-standard) forwards;
+}
+
+.reveal-fade.is-visible {
+  animation: fadeIn var(--duration-standard) var(--ease-standard) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-left,
+  .reveal-fade {
+    opacity: 1;
+    animation: none !important;
+  }
+}
+
+/* Compteur numérique (chiffres clés) */
+.counter {
+  font-variant-numeric: tabular-nums;
+}

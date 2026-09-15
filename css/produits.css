@@ -1,0 +1,303 @@
+/* ==========================================================================
+   AFRICA BIOPHARMA — produits.css
+   Section #produits : grille sommaire, cartes produit, accordéon,
+   badges d'usage, avertissements, boutons de partage
+   ========================================================================== */
+
+.produits {
+  background-color: var(--color-cream);
+}
+
+/* ---------- Grille sommaire ---------- */
+.products-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.35rem;
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-sm);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--duration-standard) var(--ease-standard),
+              box-shadow var(--duration-standard) var(--ease-standard);
+}
+
+.summary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.summary-card__symbol {
+  font-size: var(--fs-lg);
+  color: var(--color-accent-gold-dark);
+}
+
+.summary-card__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  color: var(--color-text-dark);
+}
+
+.summary-card__tag {
+  font-size: var(--fs-xs);
+  color: var(--color-primary-green-dark);
+  font-weight: 600;
+}
+
+@media (max-width: 780px) {
+  .products-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Avertissement général ---------- */
+.products-disclaimer {
+  max-width: 760px;
+  margin: 0 auto var(--space-2xl);
+  text-align: center;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  background-color: var(--color-primary-green-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+}
+
+/* ---------- Carte produit ---------- */
+.product-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: var(--space-2xl);
+  scroll-margin-top: 100px;
+}
+
+.product-card__body {
+  padding: var(--space-md) var(--space-md) var(--space-lg);
+}
+
+@media (min-width: 640px) {
+  .product-card__body {
+    padding: var(--space-lg) var(--space-lg) var(--space-xl);
+  }
+}
+
+.product-card__price-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--space-sm);
+}
+
+.price-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-md);
+  color: var(--color-primary-green-dark);
+  background-color: var(--color-primary-green-light);
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+}
+
+.price-badge--on-demand {
+  color: var(--color-accent-gold-dark);
+  background-color: #FFF7DB;
+  font-size: var(--fs-sm);
+}
+
+.product-card__heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  margin-bottom: var(--space-md);
+}
+
+.product-card__symbol {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: var(--color-primary-green-light);
+  color: var(--color-primary-green-dark);
+  font-size: var(--fs-lg);
+}
+
+.product-card__tagline {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  margin-top: 0.2rem;
+}
+
+/* ---------- Note / alerte médicale ---------- */
+.product-card__medical-note {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-top: 0.6rem;
+}
+
+.product-card__medical-alert {
+  background-color: #FFF7DB;
+  border: 1px solid var(--color-accent-gold-dark);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--fs-sm);
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-md);
+}
+
+.product-card__medical-alert strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--color-accent-gold-dark);
+}
+
+/* ---------- Accordéon ---------- */
+.product-accordion {
+  border-top: 1px solid rgba(26, 26, 26, 0.08);
+  padding-block: 0.9rem;
+}
+
+.product-accordion summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-base);
+  color: var(--color-text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.product-accordion summary::after {
+  content: '+';
+  font-size: 1.3rem;
+  color: var(--color-primary-green-dark);
+  transition: transform var(--duration-standard) var(--ease-standard);
+}
+
+.product-accordion[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.product-accordion__content {
+  padding-top: 0.7rem;
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+}
+
+.product-accordion__content p + p {
+  margin-top: 0.6rem;
+}
+
+.product-accordion--warning {
+  background-color: #FDF1EF;
+  border-top-color: transparent;
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 0.9rem;
+  margin-block: 0.6rem;
+}
+
+.product-accordion--warning summary {
+  color: var(--color-danger);
+}
+
+.product-accordion--warning summary::after {
+  color: var(--color-danger);
+}
+
+/* ---------- Badges d'usage ("Agit sur" reformulé) ---------- */
+.uses-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* ---------- Citation stylisée ---------- */
+.product-quote {
+  margin-top: var(--space-sm);
+  padding-left: var(--space-sm);
+  border-left: 2px solid var(--color-accent-gold);
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-text-dark);
+}
+
+/* ---------- Pied de carte : partage + achat ---------- */
+.product-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(26, 26, 26, 0.08);
+}
+
+.share-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.share-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--color-primary-green-light);
+  color: var(--color-primary-green-dark);
+  transition: background-color var(--duration-standard) var(--ease-standard),
+              color var(--duration-standard) var(--ease-standard);
+}
+
+.share-btn svg {
+  width: 17px;
+  height: 17px;
+}
+
+.share-btn:hover {
+  background-color: var(--color-primary-green);
+  color: var(--color-white);
+}
+
+.share-btn.is-copied {
+  background-color: var(--color-accent-gold);
+  color: var(--color-text-dark);
+}
+
+.product-card__buy {
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .product-card__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .product-card__buy {
+    width: 100%;
+  }
+}

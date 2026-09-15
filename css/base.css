@@ -1,0 +1,181 @@
+/* ==========================================================================
+   AFRICA BIOPHARMA — base.css
+   Variables globales, reset, typographie
+   ========================================================================== */
+
+:root {
+  /* Couleurs — extraites du logo */
+  --color-primary-green: #00B050;
+  --color-primary-green-dark: #00753A;
+  --color-primary-green-light: #E6F7ED;
+  --color-accent-gold: #FFCB00;
+  --color-accent-gold-dark: #E6B800;
+  --color-white: #FFFFFF;
+  --color-cream: #FBFAF6;
+  --color-text-dark: #1A1A1A;
+  --color-text-muted: #5A5A5A;
+  --color-danger: #C0392B;
+
+  /* Typographie */
+  --font-display: 'Fraunces', 'Playfair Display', Georgia, serif;
+  --font-body: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Échelle typographique (base 16px, ratio ~1.25) */
+  --fs-xs: 0.8rem;
+  --fs-sm: 0.9rem;
+  --fs-base: 1rem;
+  --fs-md: 1.25rem;
+  --fs-lg: 1.75rem;
+  --fs-xl: 2.5rem;
+  --fs-2xl: 3.5rem;
+  --fs-3xl: 4.5rem;
+
+  /* Espacements */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 9rem;
+
+  /* Rayons & ombres */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --shadow-soft: 0 4px 24px rgba(26, 26, 26, 0.06);
+  --shadow-medium: 0 12px 40px rgba(26, 26, 26, 0.10);
+  --shadow-gold: 0 8px 28px rgba(255, 203, 0, 0.25);
+
+  /* Largeurs */
+  --container-max: 1280px;
+  --content-max: 72ch;
+
+  /* Durées */
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-standard: 420ms;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: 1.65;
+  color: var(--color-text-dark);
+  background-color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+/* ---------- Typographie ---------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--color-text-dark);
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--fs-3xl); }
+h2 { font-size: var(--fs-2xl); }
+h3 { font-size: var(--fs-lg); }
+h4 { font-size: var(--fs-md); }
+
+p {
+  max-width: var(--content-max);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-primary-green-dark);
+  margin-bottom: var(--space-xs);
+}
+
+/* Focus clavier visible partout */
+:focus-visible {
+  outline: 3px solid var(--color-accent-gold-dark);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Échelle responsive ---------- */
+@media (max-width: 900px) {
+  :root {
+    --fs-3xl: 2.75rem;
+    --fs-2xl: 2.25rem;
+    --fs-xl: 1.9rem;
+    --fs-lg: 1.4rem;
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --fs-3xl: 2.2rem;
+    --fs-2xl: 1.85rem;
+    --space-2xl: 4rem;
+    --space-3xl: 5.5rem;
+  }
+}

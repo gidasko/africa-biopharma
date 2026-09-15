@@ -1,0 +1,160 @@
+/* ==========================================================================
+   AFRICA BIOPHARMA — science.css
+   Section #science : partenaires institutionnels, équipe de chercheurs,
+   citation finale
+   ========================================================================== */
+
+.science {
+  background-color: var(--color-primary-green-light);
+}
+
+/* ---------- Partenaires institutionnels ---------- */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+  margin-bottom: var(--space-2xl);
+}
+
+.partner-plate {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-soft);
+  border-top: 3px solid var(--color-accent-gold);
+}
+
+.partner-plate h4 {
+  font-size: var(--fs-base);
+  margin-bottom: 0.4rem;
+}
+
+@media (max-width: 980px) {
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .partners-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Équipe scientifique ---------- */
+.team-intro {
+  max-width: 680px;
+  margin-bottom: var(--space-lg);
+}
+
+.team-intro h3 {
+  margin-bottom: var(--space-xs);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+}
+
+.team-card {
+  position: relative;
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--duration-standard) var(--ease-standard),
+              box-shadow var(--duration-standard) var(--ease-standard);
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.team-card h4 {
+  font-size: var(--fs-base);
+  margin-bottom: 0.25rem;
+}
+
+.team-card__role {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.team-card__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--color-primary-green-light);
+  color: var(--color-primary-green-dark);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+}
+
+.team-card--lead {
+  grid-column: span 2;
+  background-color: var(--color-primary-green-dark);
+  color: var(--color-white);
+}
+
+.team-card--lead .team-card__role {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.team-card__star {
+  display: block;
+  font-size: var(--fs-lg);
+  color: var(--color-accent-gold);
+  margin-bottom: var(--space-xs);
+}
+
+@media (max-width: 980px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-card--lead {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 560px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card--lead {
+    grid-column: span 1;
+  }
+}
+
+/* ---------- Citation finale ---------- */
+.science-quote {
+  text-align: center;
+  max-width: 720px;
+  margin: var(--space-2xl) auto 0;
+}
+
+.science-quote p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-lg);
+  color: var(--color-text-dark);
+  margin-inline: auto;
+}
+
+.science-quote cite {
+  display: block;
+  margin-top: var(--space-sm);
+  font-style: normal;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-primary-green-dark);
+}

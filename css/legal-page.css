@@ -1,0 +1,92 @@
+/* ==========================================================================
+   AFRICA BIOPHARMA — legal-page.css
+   Styles partagés par les pages annexes (mentions légales, politique de
+   confidentialité, CGV/CGU) et par la page article-type.
+   ========================================================================== */
+
+.legal-topbar {
+  border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+  background-color: var(--color-white);
+}
+
+.legal-topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1rem;
+}
+
+.legal-topbar__logo img {
+  height: 36px;
+  width: auto;
+}
+
+.breadcrumb {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+}
+
+.breadcrumb a {
+  color: var(--color-primary-green-dark);
+}
+
+.breadcrumb span[aria-hidden] {
+  margin-inline: 0.4rem;
+}
+
+.legal-page {
+  background-color: var(--color-cream);
+  padding-block: var(--space-2xl);
+}
+
+.legal-page__inner {
+  max-width: 780px;
+}
+
+.legal-page h1 {
+  margin-bottom: 0.3rem;
+}
+
+.legal-page__updated {
+  font-size: var(--fs-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.legal-page section {
+  margin-top: var(--space-lg);
+}
+
+.legal-page h2 {
+  font-size: var(--fs-md);
+  margin-bottom: var(--space-sm);
+}
+
+.legal-page p,
+.legal-page ul {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.legal-page ul {
+  padding-left: 1.2rem;
+  list-style: disc;
+}
+
+.legal-page a {
+  color: var(--color-primary-green-dark);
+  text-decoration: underline;
+}
+
+.legal-notice-box {
+  background-color: #FFF7DB;
+  border: 1px solid var(--color-accent-gold-dark);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  font-size: var(--fs-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.legal-notice-box strong {
+  color: var(--color-accent-gold-dark);
+}

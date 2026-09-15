@@ -1,0 +1,92 @@
+# ==============================================================================
+# AFRICA BIOPHARMA — netlify.toml
+# Configuration de build, redirections, headers de sécurité, Functions.
+# ==============================================================================
+
+[build]
+  publish = "."
+  functions = "functions"
+  command = ""
+
+[functions]
+  node_bundler = "esbuild"
+
+# ------------------------------------------------------------------------------
+# Redirections
+# ------------------------------------------------------------------------------
+
+# API : /api/xxx -> Netlify Functions (URL courte et stable côté client)
+[[redirects]]
+  from = "/api/send-order"
+  to = "/.netlify/functions/send-order"
+  status = 200
+
+[[redirects]]
+  from = "/api/send-contact"
+  to = "/.netlify/functions/send-contact"
+  status = 200
+
+# Le futur panneau d'administration (Session 9) vivra sous /admin ;
+# toute route non trouvée sous /admin retombe sur son point d'entrée SPA.
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+# Fallback 404 propre pour le reste du site
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# ------------------------------------------------------------------------------
+# Headers de sécurité
+# ------------------------------------------------------------------------------
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), camera=(), microphone=()"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    # CSP : autorise les polices Google, reCAPTCHA/Google Maps (script,
+    # frame, connect) et les images Unsplash (placeholders) / Cloudinary
+    # (visuels définitifs, Session 9). 'unsafe-inline' est nécessaire ici
+    # en l'absence d'étape de build générant des nonces/hash — à durcir
+    # (nonce-based CSP) lors de la migration vers un hébergement avec
+    # pipeline de build (voir README, section Migration).
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://www.google.com; connect-src 'self' https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML : pas de cache long, pour que les mises à jour de contenu soient
+# visibles immédiatement (prix, contact... une fois branchés en Session 9)
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

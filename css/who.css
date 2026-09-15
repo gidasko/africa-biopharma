@@ -1,0 +1,195 @@
+/* ==========================================================================
+   AFRICA BIOPHARMA — who.css
+   Section #qui-sommes-nous : éditorial, conviction, mission,
+   compteurs animés, encart siège
+   ========================================================================== */
+
+.who {
+  position: relative;
+  overflow: hidden;
+}
+
+.who__leaf-1 {
+  top: -60px;
+  right: -60px;
+  transform: rotate(20deg);
+}
+
+.who__editorial {
+  max-width: 760px;
+  margin-inline: auto;
+  text-align: left;
+}
+
+.who__editorial h2 {
+  margin-block: var(--space-sm) var(--space-md);
+}
+
+.who__editorial-body {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.who__editorial-body p + p {
+  margin-top: var(--space-sm);
+}
+
+/* ---------- Encart "Notre conviction" ---------- */
+.conviction-card {
+  position: relative;
+  background-color: var(--color-primary-green-dark);
+  color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg) var(--space-lg) var(--space-md);
+  margin-block: var(--space-lg);
+  overflow: hidden;
+}
+
+.conviction-card__quote-mark {
+  position: absolute;
+  top: -0.5rem;
+  left: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 6rem;
+  line-height: 1;
+  color: var(--color-accent-gold);
+  opacity: 0.5;
+}
+
+.conviction-card__text {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: 500;
+  line-height: 1.5;
+  max-width: 640px;
+}
+
+.conviction-card__label {
+  display: block;
+  margin-top: var(--space-sm);
+  font-style: normal;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+}
+
+/* ---------- Citation du coordonnateur ---------- */
+.coordinator-quote {
+  margin-top: var(--space-lg);
+  padding-left: var(--space-md);
+  border-left: 3px solid var(--color-accent-gold);
+}
+
+.coordinator-quote blockquote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-md);
+  margin: 0 0 var(--space-xs);
+}
+
+.coordinator-quote figcaption {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.coordinator-quote figcaption strong {
+  color: var(--color-text-dark);
+}
+
+/* ---------- Mission ---------- */
+.who__mission {
+  max-width: 760px;
+  margin: var(--space-2xl) auto 0;
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(26, 26, 26, 0.08);
+}
+
+.who__mission h3 {
+  margin-block: 0.4rem var(--space-sm);
+}
+
+.who__mission-statement {
+  margin-top: var(--space-sm);
+  color: var(--color-text-dark);
+}
+
+/* ---------- Chiffres clés (compteurs animés) ---------- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+  margin-top: var(--space-2xl);
+}
+
+.stat-card {
+  text-align: center;
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-sm);
+  box-shadow: var(--shadow-soft);
+}
+
+.stat-card__value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--color-primary-green-dark);
+}
+
+.stat-card__label {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+@media (max-width: 780px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Notre siège ---------- */
+.hq-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  max-width: 640px;
+  margin: var(--space-lg) auto 0;
+  background-color: var(--color-primary-green-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.hq-card__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  color: var(--color-primary-green-dark);
+}
+
+.hq-card__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.hq-card h4 {
+  margin-bottom: 0.3rem;
+}
+
+.hq-card__registration {
+  font-size: var(--fs-xs);
+  margin-top: 0.2rem;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tableau de bord — Administration Africa Biopharma</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="/assets/icons/favicon.ico" sizes="any" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/admin.css" />
+</head>
+<body class="admin-body">
+
+  <header class="admin-topbar">
+    <div class="admin-topbar__inner">
+      <a href="/admin/dashboard.html" class="admin-topbar__logo">
+        <img src="/assets/images/logo/logo-africa-biopharma.svg" alt="Africa Biopharma" height="32" />
+        <span>Administration</span>
+      </a>
+      <nav class="admin-topbar__nav">
+        <a href="/admin/dashboard.html" class="is-active">Produits</a>
+        <a href="/admin/contact.html">Réglages contact</a>
+        <a href="/index.html" target="_blank" rel="noopener noreferrer">Voir le site ↗</a>
+      </nav>
+      <button type="button" class="btn btn-secondary" data-logout>Se déconnecter</button>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <div class="admin-main__inner">
+      <div class="admin-page-head">
+        <h1>Produits</h1>
+        <p class="text-muted">Gérez le prix et les photos des 8 remèdes affichés sur le site.</p>
+      </div>
+
+      <div class="admin-status" data-dashboard-status>Chargement des produits...</div>
+
+      <div class="admin-product-grid" data-product-grid hidden></div>
+    </div>
+  </main>
+
+  <script src="/js/admin-auth-guard.js" defer></script>
+  <script src="/js/admin-dashboard.js" defer></script>
+</body>
+</html>

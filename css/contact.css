@@ -1,0 +1,115 @@
+/* ==========================================================================
+   AFRICA BIOPHARMA — contact.css
+   Section #contact : coordonnées, carte, formulaire
+   ========================================================================== */
+
+.contact-section {
+  background-color: var(--color-primary-green-light);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.contact-info {
+  padding: var(--space-lg);
+}
+
+.contact-info h3 {
+  margin-bottom: var(--space-md);
+}
+
+.contact-info__list {
+  display: grid;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.contact-info__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  font-size: var(--fs-sm);
+}
+
+.contact-info__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--color-primary-green-light);
+  color: var(--color-primary-green-dark);
+}
+
+.contact-info__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.contact-info__tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-text-muted);
+  border-left: 2px solid var(--color-accent-gold);
+  padding-left: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.contact-info__whatsapp {
+  width: 100%;
+  margin-bottom: var(--space-md);
+}
+
+/* ---------- Carte ---------- */
+.contact-map {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.contact-map__placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.6rem;
+  background-color: var(--color-cream);
+  padding: var(--space-md);
+}
+
+.contact-map__note {
+  font-size: var(--fs-xs);
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* ---------- Formulaire de contact ---------- */
+.contact-form {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-form h3 {
+  margin-bottom: var(--space-md);
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

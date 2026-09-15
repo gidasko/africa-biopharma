@@ -1,0 +1,22 @@
+/* ==========================================================================
+   AFRICA BIOPHARMA — main.css
+   Point d'entrée : importe les fichiers de fondation.
+   Les styles spécifiques à chaque section seront ajoutés
+   dans les sessions suivantes (ex: hero.css, produits.css...).
+   ========================================================================== */
+
+@import url('base.css');
+@import url('components.css');
+@import url('animations.css');
+@import url('header.css');
+@import url('hero.css');
+@import url('who.css');
+@import url('agrements.css');
+@import url('science.css');
+@import url('produits.css');
+@import url('product-slider.css');
+@import url('order-modal.css');
+@import url('footer.css');
+@import url('blog.css');
+@import url('contact.css');
+@import url('cookie-consent.css');

@@ -1,0 +1,13 @@
+{
+  "name": "africa-biopharma-functions",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Netlify Functions pour le site Africa Biopharma (commande, contact, panneau d'administration).",
+  "dependencies": {
+    "nodemailer": "^6.9.14",
+    "pg": "^8.11.5",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "cloudinary": "^2.2.0"
+  }
+}

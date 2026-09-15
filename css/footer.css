@@ -1,0 +1,148 @@
+/* ==========================================================================
+   AFRICA BIOPHARMA — footer.css
+   Pied de page premium : marque, navigation, contact, bandeau légal
+   ========================================================================== */
+
+.site-footer {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-primary-green-dark);
+  color: rgba(255, 255, 255, 0.85);
+  padding-top: var(--space-2xl);
+}
+
+.footer__leaf {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  opacity: 0.08;
+  transform: rotate(-15deg);
+}
+
+.footer__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: var(--space-lg);
+  padding-bottom: var(--space-xl);
+}
+
+.footer__brand img {
+  height: 36px;
+  width: auto;
+  margin-bottom: var(--space-sm);
+}
+
+.footer__tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-sm);
+  color: var(--color-accent-gold);
+  max-width: 26ch;
+  margin-bottom: var(--space-md);
+}
+
+.footer__socials {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+  transition: background-color var(--duration-standard) var(--ease-standard);
+}
+
+.footer__social-link:hover {
+  background-color: var(--color-accent-gold);
+  color: var(--color-text-dark);
+}
+
+.footer__social-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.footer__col h4 {
+  color: var(--color-white);
+  font-size: var(--fs-base);
+  margin-bottom: var(--space-sm);
+}
+
+.footer__col ul {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.footer__col a {
+  font-size: var(--fs-sm);
+  color: rgba(255, 255, 255, 0.75);
+  transition: color var(--duration-standard) var(--ease-standard);
+}
+
+.footer__col a:hover {
+  color: var(--color-accent-gold);
+}
+
+.footer__contact li {
+  font-size: var(--fs-sm);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ---------- Bandeau légal ---------- */
+.footer__legal {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-block: var(--space-md);
+}
+
+.footer__legal-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.footer__legal-inner p {
+  font-size: var(--fs-xs);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer__legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.footer__legal-links a {
+  font-size: var(--fs-xs);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer__legal-links a:hover {
+  color: var(--color-accent-gold);
+}
+
+@media (max-width: 980px) {
+  .footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .footer__legal-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Africa Biopharma — La pharmacopée béninoise",
+  "short_name": "Africa Biopharma",
+  "description": "Compléments alimentaires 100% naturels issus de la pharmacopée ouest-africaine, validés par la recherche scientifique béninoise.",
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#FBFAF6",
+  "theme_color": "#00753A",
+  "lang": "fr",
+  "dir": "ltr",
+  "categories": ["shopping", "health", "lifestyle"],
+  "icons": [
+    {
+      "src": "/assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

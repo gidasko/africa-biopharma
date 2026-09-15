@@ -1,0 +1,195 @@
+/* ==========================================================================
+   AFRICA BIOPHARMA — hero.css
+   Bannière héro plein écran avec carrousel panoramique
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: var(--color-white);
+}
+
+/* ---------- Carrousel (fond) ---------- */
+.hero__carousel {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1400ms var(--ease-standard);
+}
+
+.hero__slide.is-active {
+  opacity: 1;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 30, 15, 0.75) 0%,
+    rgba(0, 40, 20, 0.6) 45%,
+    rgba(0, 20, 10, 0.85) 100%
+  );
+}
+
+/* ---------- Contenu ---------- */
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 880px;
+  padding-block: 8rem 6rem;
+}
+
+.hero__kicker {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-accent-gold);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 203, 0, 0.4);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  margin-bottom: var(--space-md);
+}
+
+.hero__title {
+  color: var(--color-white);
+  font-size: var(--fs-3xl);
+  margin-bottom: var(--space-sm);
+}
+
+.hero__title span {
+  display: block;
+  font-size: 0.5em;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--color-accent-gold);
+  margin-top: 0.4rem;
+}
+
+.hero__subtitle {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: 500;
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+  opacity: 0.95;
+}
+
+.hero__quote {
+  font-size: var(--fs-base);
+  font-style: italic;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+  border-left: 2px solid var(--color-accent-gold);
+  padding-left: var(--space-sm);
+  margin-bottom: var(--space-md);
+  max-width: 620px;
+}
+
+.hero__cta-line {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--color-white);
+  margin-bottom: var(--space-lg);
+  max-width: 620px;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero .btn-secondary {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: var(--color-white);
+}
+
+.hero .btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ---------- Pagination (dots) ---------- */
+.hero__pagination {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: var(--space-lg);
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.6rem;
+}
+
+.hero__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: background-color var(--duration-standard) var(--ease-standard),
+              transform var(--duration-standard) var(--ease-standard);
+}
+
+.hero__dot.is-active {
+  background-color: var(--color-accent-gold);
+  transform: scale(1.25);
+}
+
+/* ---------- Flèches ---------- */
+.hero__arrow {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: var(--color-white);
+  font-size: 1.5rem;
+  transition: background-color var(--duration-standard) var(--ease-standard);
+}
+
+.hero__arrow:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.hero__arrow--prev {
+  left: var(--space-md);
+}
+
+.hero__arrow--next {
+  right: var(--space-md);
+}
+
+@media (max-width: 700px) {
+  .hero__arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 1.2rem;
+  }
+
+  .hero__arrow--prev { left: var(--space-xs); }
+  .hero__arrow--next { right: var(--space-xs); }
+
+  .hero__content {
+    padding-block: 7rem 4.5rem;
+  }
+}

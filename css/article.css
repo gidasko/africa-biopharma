@@ -1,0 +1,66 @@
+/* ==========================================================================
+   AFRICA BIOPHARMA — article.css
+   Page article (/pages/article-type.html)
+   ========================================================================== */
+
+.article-page {
+  background-color: var(--color-cream);
+  padding-block: var(--space-2xl);
+}
+
+.article-page__inner {
+  max-width: 760px;
+}
+
+.article-header {
+  margin-bottom: var(--space-lg);
+}
+
+.article-header h1 {
+  margin-block: 0.4rem var(--space-sm);
+}
+
+.article-header__meta {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.article-cover {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  margin-bottom: var(--space-lg);
+}
+
+.article-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-body h2 {
+  font-size: var(--fs-md);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.article-body p {
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-sm);
+  line-height: 1.75;
+}
+
+.article-share {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(26, 26, 26, 0.08);
+}
+
+.article-share__label {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-text-dark);
+}

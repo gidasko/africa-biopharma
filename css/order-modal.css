@@ -1,0 +1,215 @@
+/* ==========================================================================
+   AFRICA BIOPHARMA — order-modal.css
+   Modale de commande rapide : overlay, formulaire, honeypot, statut
+   ========================================================================== */
+
+.order-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm);
+}
+
+.order-modal[hidden] {
+  display: none;
+}
+
+.order-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 20, 10, 0.55);
+  backdrop-filter: blur(3px);
+  animation: fadeIn 250ms var(--ease-standard);
+}
+
+.order-modal__dialog {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-medium);
+  animation: slideUp 300ms var(--ease-standard);
+}
+
+.order-modal__close {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--color-text-muted);
+  transition: background-color var(--duration-standard) var(--ease-standard);
+}
+
+.order-modal__close:hover {
+  background-color: var(--color-primary-green-light);
+  color: var(--color-primary-green-dark);
+}
+
+.order-modal__close svg {
+  width: 18px;
+  height: 18px;
+}
+
+#order-modal-title {
+  padding-right: var(--space-xl);
+  margin-bottom: 0.4rem;
+}
+
+.order-modal__subtitle {
+  font-size: var(--fs-sm);
+  margin-bottom: var(--space-md);
+}
+
+/* ---------- Statut (chargement / confirmation / erreur) ---------- */
+.order-modal__status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-sm);
+  padding: var(--space-lg) 0;
+}
+
+.order-modal__spinner {
+  width: 34px;
+  height: 34px;
+  border: 3px solid var(--color-primary-green-light);
+  border-top-color: var(--color-primary-green);
+  border-radius: 50%;
+  animation: spin 800ms linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.order-modal__status[data-state="success"] p {
+  font-size: var(--fs-md);
+  font-family: var(--font-display);
+  color: var(--color-primary-green-dark);
+}
+
+/* ---------- Formulaire ---------- */
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.order-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+@media (max-width: 480px) {
+  .order-form__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.order-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.order-form__field label {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+.order-form__field input,
+.order-form__field textarea {
+  border: 1.5px solid rgba(26, 26, 26, 0.15);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.9rem;
+  font-size: var(--fs-base);
+  background-color: var(--color-cream);
+  transition: border-color var(--duration-standard) var(--ease-standard);
+}
+
+.order-form__field input:focus,
+.order-form__field textarea:focus {
+  outline: none;
+  border-color: var(--color-primary-green);
+}
+
+.order-form__field input:invalid:not(:placeholder-shown) {
+  border-color: var(--color-danger);
+}
+
+.order-form__field input[readonly] {
+  background-color: var(--color-primary-green-light);
+  color: var(--color-primary-green-dark);
+  font-weight: 600;
+  border-color: transparent;
+}
+
+.order-form__field textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Honeypot : totalement invisible, hors du flux visuel et du tabulateur */
+.order-form__honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.order-form__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.order-form__consent input {
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  accent-color: var(--color-primary-green);
+  width: 16px;
+  height: 16px;
+}
+
+.order-form__submit {
+  margin-top: 0.3rem;
+  width: 100%;
+}
+
+.order-form__submit[disabled] {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.order-form__error {
+  font-size: var(--fs-sm);
+  color: var(--color-danger);
+  text-align: center;
+}
+
+/* Badge reCAPTCHA : Google impose son affichage ; on le garde discret */
+.grecaptcha-badge {
+  z-index: 150 !important;
+}

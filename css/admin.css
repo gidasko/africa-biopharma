@@ -1,0 +1,387 @@
+/* ==========================================================================
+   AFRICA BIOPHARMA — admin.css
+   Styles de l'espace d'administration (login, dashboard, édition produit,
+   réglages contact). Réutilise les variables et composants de base.css /
+   components.css déjà chargés via main.css.
+   ========================================================================== */
+
+.admin-body {
+  background-color: var(--color-cream);
+  min-height: 100vh;
+}
+
+.admin-body--centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+}
+
+/* ---------- Carte de connexion ---------- */
+.admin-auth-card {
+  width: 100%;
+  max-width: 380px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-medium);
+  padding: var(--space-lg);
+  text-align: center;
+}
+
+.admin-auth-card__logo {
+  margin-bottom: var(--space-md);
+}
+
+.admin-auth-card h1 {
+  font-size: var(--fs-lg);
+  margin-bottom: 0.3rem;
+}
+
+.admin-auth-card p {
+  margin-bottom: var(--space-md);
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  text-align: left;
+}
+
+.admin-form__submit {
+  margin-top: 0.4rem;
+}
+
+/* ---------- Topbar ---------- */
+.admin-topbar {
+  background-color: var(--color-white);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+}
+
+.admin-topbar__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: 0.9rem var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.admin-topbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  color: var(--color-primary-green-dark);
+  flex-shrink: 0;
+}
+
+.admin-topbar__nav {
+  display: flex;
+  gap: 1.3rem;
+  flex: 1;
+}
+
+.admin-topbar__nav a {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.admin-topbar__nav a.is-active,
+.admin-topbar__nav a:hover {
+  color: var(--color-primary-green-dark);
+}
+
+@media (max-width: 700px) {
+  .admin-topbar__inner {
+    flex-wrap: wrap;
+  }
+}
+
+/* ---------- Contenu principal ---------- */
+.admin-main {
+  padding-block: var(--space-lg);
+}
+
+.admin-main__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+.admin-main__inner--narrow {
+  max-width: 640px;
+}
+
+.admin-page-head {
+  margin-bottom: var(--space-lg);
+}
+
+.admin-page-head h1 {
+  font-size: var(--fs-xl);
+  margin-bottom: 0.2rem;
+}
+
+.admin-back-link {
+  display: inline-block;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-primary-green-dark);
+  margin-bottom: var(--space-md);
+}
+
+.admin-status {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.admin-status[data-state="error"] {
+  color: var(--color-danger);
+}
+
+/* ---------- Grille produits (dashboard) ---------- */
+.admin-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-md);
+}
+
+.admin-product-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--duration-standard) var(--ease-standard);
+}
+
+.admin-product-card:hover {
+  transform: translateY(-3px);
+}
+
+.admin-product-card__thumb {
+  aspect-ratio: 4 / 3;
+  background-color: var(--color-primary-green-light);
+  overflow: hidden;
+}
+
+.admin-product-card__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.admin-product-card__thumb--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-xs);
+  color: var(--color-primary-green-dark);
+  text-align: center;
+  padding: var(--space-sm);
+}
+
+.admin-product-card__body {
+  padding: var(--space-sm) var(--space-md) var(--space-md);
+}
+
+.admin-product-card__body h3 {
+  font-size: var(--fs-base);
+  margin-bottom: 0.3rem;
+}
+
+.admin-product-card__price {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-primary-green-dark);
+  margin-bottom: var(--space-sm);
+}
+
+/* ---------- Cartes formulaire (édition produit / contact) ---------- */
+.admin-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.admin-card h2 {
+  font-size: var(--fs-md);
+  margin-bottom: var(--space-sm);
+}
+
+.admin-card__hint {
+  font-size: var(--fs-xs);
+  margin-bottom: var(--space-sm);
+}
+
+.admin-save-feedback {
+  margin-top: 0.5rem;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+.admin-save-feedback[data-state="success"] {
+  color: var(--color-primary-green-dark);
+}
+
+.admin-save-feedback[data-state="error"] {
+  color: var(--color-danger);
+}
+
+/* ---------- Grille édition produit ---------- */
+.admin-edit-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .admin-edit-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Emplacements images ---------- */
+.admin-image-slots {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.admin-image-slot {
+  border: 1.5px dashed rgba(26, 26, 26, 0.15);
+  border-radius: var(--radius-sm);
+  aspect-ratio: 4 / 3;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-cream);
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-image-slot__preview {
+  flex: 1;
+  position: relative;
+}
+
+.admin-image-slot__preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.admin-image-slot__empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.admin-image-slot__number {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.55);
+  color: var(--color-white);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  z-index: 1;
+}
+
+.admin-image-slot__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.3rem;
+  padding: 0.4rem;
+  background-color: var(--color-white);
+  border-top: 1px solid rgba(26, 26, 26, 0.08);
+}
+
+.admin-image-slot__reorder {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.admin-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  color: var(--color-text-muted);
+  transition: background-color var(--duration-standard) var(--ease-standard);
+}
+
+.admin-icon-btn:hover {
+  background-color: var(--color-primary-green-light);
+  color: var(--color-primary-green-dark);
+}
+
+.admin-icon-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.admin-icon-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.admin-image-slot__upload-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--color-primary-green-dark);
+  cursor: pointer;
+}
+
+.admin-image-slot input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.admin-image-slot__delete {
+  color: var(--color-danger);
+}
+
+/* ---------- Aperçu en direct ---------- */
+.admin-edit-preview h2 {
+  font-size: var(--fs-md);
+  margin-bottom: var(--space-sm);
+}
+
+.admin-preview-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  max-width: 340px;
+}
+
+.admin-preview-card__body {
+  padding: var(--space-sm) var(--space-md) var(--space-md);
+}
+
+.admin-preview-card__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin-top: 0.4rem;
+}
