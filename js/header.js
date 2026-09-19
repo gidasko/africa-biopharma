@@ -74,22 +74,24 @@ function initBurgerMenu() {
  * et l'ouverture/fermeture au clic en version desktop (accessibilité clavier).
  */
 function initMobileSubmenu() {
-  // Accordéon mobile
-  const mobileToggle = document.querySelector('[data-mobile-submenu-toggle]');
-  const mobileSubmenu = document.querySelector('[data-mobile-submenu]');
+  // Accordéon mobile — gère chaque sous-menu indépendamment (plusieurs possibles)
+  document.querySelectorAll('[data-mobile-submenu-toggle]').forEach((toggle) => {
+    const key = toggle.dataset.mobileSubmenuToggle;
+    const submenu = document.querySelector(`[data-mobile-submenu="${key}"]`);
+    if (!submenu) return;
 
-  if (mobileToggle && mobileSubmenu) {
-    mobileToggle.addEventListener('click', () => {
-      const isOpen = mobileSubmenu.classList.toggle('is-open');
-      mobileToggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.addEventListener('click', () => {
+      const isOpen = submenu.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
     });
-  }
+  });
 
   // Desktop : ouverture au clic (en plus du hover CSS), utile au clavier/tactile
-  const desktopSubmenuWrap = document.querySelector('.has-submenu');
-  const desktopToggle = document.querySelector('.submenu-toggle');
+  // Gère chaque sous-menu ".has-submenu" indépendamment (plusieurs possibles)
+  document.querySelectorAll('.has-submenu').forEach((desktopSubmenuWrap) => {
+    const desktopToggle = desktopSubmenuWrap.querySelector('.submenu-toggle');
+    if (!desktopToggle) return;
 
-  if (desktopSubmenuWrap && desktopToggle) {
     desktopToggle.addEventListener('click', (e) => {
       e.preventDefault();
       const isOpen = desktopSubmenuWrap.classList.toggle('is-open');
@@ -102,7 +104,7 @@ function initMobileSubmenu() {
         desktopToggle.setAttribute('aria-expanded', 'false');
       }
     });
-  }
+  });
 }
 
 /**
