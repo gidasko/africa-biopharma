@@ -18,7 +18,7 @@
 .who__editorial {
   max-width: 760px;
   margin-inline: auto;
-  text-align: left;
+  text-align: center;
 }
 
 .who__editorial h2 {
@@ -48,7 +48,8 @@
 .conviction-card__quote-mark {
   position: absolute;
   top: -0.5rem;
-  left: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: var(--font-display);
   font-size: 6rem;
   line-height: 1;
@@ -63,6 +64,7 @@
   font-weight: 500;
   line-height: 1.5;
   max-width: 640px;
+  margin-inline: auto;
 }
 
 .conviction-card__label {
@@ -79,8 +81,10 @@
 /* ---------- Citation du coordonnateur ---------- */
 .coordinator-quote {
   margin-top: var(--space-lg);
-  padding-left: var(--space-md);
-  border-left: 3px solid var(--color-accent-gold);
+  padding-top: var(--space-md);
+  border-top: 3px solid var(--color-accent-gold);
+  border-left: none;
+  padding-left: 0;
 }
 
 .coordinator-quote blockquote {
@@ -93,6 +97,7 @@
 .coordinator-quote figcaption {
   display: flex;
   flex-direction: column;
+  align-items: center;
   font-size: var(--fs-sm);
   color: var(--color-text-muted);
 }
@@ -107,6 +112,7 @@
   margin: var(--space-2xl) auto 0;
   padding-top: var(--space-lg);
   border-top: 1px solid rgba(26, 26, 26, 0.08);
+  text-align: center;
 }
 
 .who__mission h3 {
