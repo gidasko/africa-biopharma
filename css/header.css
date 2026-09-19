@@ -1,7 +1,77 @@
 /* ==========================================================================
    AFRICA BIOPHARMA — header.css
-   Header sticky, navigation, sous-menu, burger mobile, boutons flottants
+   Barre de contact supérieure, header sticky, navigation, sous-menu,
+   burger mobile, boutons flottants
    ========================================================================== */
+
+/* ---------- Barre de contact supérieure ---------- */
+.topbar {
+  background-color: var(--color-primary-green-dark);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding-block: 0.5rem;
+  font-size: var(--fs-xs);
+}
+
+.topbar__info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.topbar__link {
+  color: rgba(255, 255, 255, 0.9);
+  transition: color var(--duration-standard) var(--ease-standard);
+}
+
+.topbar__link:hover {
+  color: var(--color-accent-gold);
+}
+
+.topbar__sep {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.topbar__address {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.topbar__whatsapp {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 700;
+  color: var(--color-accent-gold);
+  white-space: nowrap;
+}
+
+.topbar__whatsapp:hover {
+  color: var(--color-white);
+}
+
+@media (max-width: 780px) {
+  .topbar__address {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .topbar__inner {
+    font-size: 0.68rem;
+  }
+
+  .topbar__sep:nth-of-type(2) {
+    display: none;
+  }
+}
 
 .skip-link {
   position: absolute;
